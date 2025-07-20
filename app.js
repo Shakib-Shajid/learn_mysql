@@ -4,19 +4,23 @@ import mysql from "mysql2/promise";
 const db = await mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
-    database: "",
+    password: "rootAdmin20#",
+    // database: "mysql_db",
 })
 
 
+// 2. create DB
 
-console.log("hello");
+await db.execute (`create database mysql_db`);
+
+console.log(await db.execute('show databases'));
+
+// ........................................................
+
+//  3. create a table
 
 
 
 
-/**
- * 2. create DB
- * 3. create a table
- * 4. perform CRUD 
- * */ 
+ 
+//  4. perform CRUD 
