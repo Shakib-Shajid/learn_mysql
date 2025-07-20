@@ -4,7 +4,7 @@ import mysql from "mysql2/promise";
 const db = await mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "rootAdmin20#",
+    password: "",
     database: "mysql_db",
 })
 
@@ -64,6 +64,20 @@ console.log("database connected");
 
 
 // search data
-const [rows] = await db.execute(` select * from users  where username="op"`)
-console.log(rows);
+// const [rows] = await db.execute(` select * from users  where username="op"`)
+// console.log(rows);
+
+
+
+
+// update
+
+try {
+    const [rows] = await db.execute("update users set username='updateName' where email='abcd@gmail.com' ")
+    console.log("All users: ", rows);
+
+    
+} catch (error) {
+    console.log(error);
+}
 
