@@ -4,7 +4,7 @@ import mysql from "mysql2/promise";
 const db = await mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "rootAdmin20#",
     database: "mysql_db",
 })
 
@@ -47,16 +47,23 @@ console.log("database connected");
 // console.log(rows);
 // [rows field]
 
-const values = [
-    ["ij", "ij@gmail.com"],
-    ["kl", "kl@gmail.com"],
-    ["mn", "mn@gmail.com"],
-    ["op", "op@gmail.com"],
-    ["qr", "qr@gmail.com"],
-];
 
-await db.query(`insert into users(username, email) values ?`, [values])
 
-const [rows] = await db.execute(` select * from users `)
+// const values = [
+//     ["ij", "ij@gmail.com"],
+//     ["kl", "kl@gmail.com"],
+//     ["mn", "mn@gmail.com"],
+//     ["op", "op@gmail.com"],
+//     ["qr", "qr@gmail.com"],
+// ];
+
+// await db.query(`insert into users(username, email) values ?`, [values])
+
+// const [rows] = await db.execute(` select * from users `)
+// console.log(rows);
+
+
+// search data
+const [rows] = await db.execute(` select * from users  where username="op"`)
 console.log(rows);
 
