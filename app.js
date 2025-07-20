@@ -4,7 +4,7 @@ import mysql from "mysql2/promise";
 const db = await mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "rootAdmin20#",
     database: "mysql_db",
 })
 
@@ -38,10 +38,14 @@ console.log("database connected");
 //     insert into users(username, email) values('abcd', "abcd@gmail.com")
 //     `);
 
+// await db.execute(`insert into users(username, email) values(?,?)`, ["efgh", "efgh@gmail.com"]);
+
 
 
 // read
 const [rows] = await db.execute(` select * from users `)
 console.log(rows);
 // [rows field]
+
+
 
