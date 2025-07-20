@@ -72,11 +72,26 @@ console.log("database connected");
 
 // update
 
-try {
-    const [rows] = await db.execute("update users set username='updateName' where email='abcd@gmail.com' ")
-    console.log("All users: ", rows);
+// try {
+//     const [rows] = await db.execute("update users set username='updateName' where email='abcd@gmail.com' ")
+//     console.log("All users: ", rows);
 
     
+// } catch (error) {
+//     console.log(error);
+// }
+
+
+
+
+
+
+// delete
+
+try {
+    const [rows] = await db.execute("DELETE FROM users where email='abcd@gmail.com' ")
+    console.log("All users: ", rows);
+
 } catch (error) {
     console.log(error);
 }
